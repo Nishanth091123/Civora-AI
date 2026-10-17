@@ -1,0 +1,6 @@
+# Used by Streamlit Community Cloud for Civora AI Lite (main file: streamlit_app.py).
+# The FULL web app (FastAPI) uses requirements-app.txt instead.
+streamlit>=1.36,<2
+fastapi>=0.115,<1
+openpyxl>=3.1,<4
+reportlab>=4.0,<5

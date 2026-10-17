@@ -1,0 +1,2 @@
+# Kept for backward compatibility. All dependencies are now in requirements.txt.
+-r requirements.txt

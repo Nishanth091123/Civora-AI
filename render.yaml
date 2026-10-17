@@ -1,0 +1,30 @@
+# Render Blueprint for Civora AI (full FastAPI app, built from the Dockerfile).
+# DATA SAFETY: the free plan has no permanent disk, so on its own every restart,
+# sleep or redeploy deletes all users, logins and projects. Turn on ONE of these:
+#   0) BEST (v3.7.0): DATABASE_URL = PostgreSQL connection string from Neon or Supabase (free).
+#   A) FREE: cloud backup to a private GitHub repo - set CIVORA_BACKUP_REPO and
+#      CIVORA_BACKUP_TOKEN in Render > Environment (see README "Keep your data safe").
+#   B) PAID: plan "starter" + the disk block below, and CIVORA_DATA_DIR=/app/data/civora.
+services:
+  - type: web
+    name: civora-ai
+    runtime: docker
+    plan: free
+    region: singapore
+    dockerfilePath: ./Dockerfile
+    autoDeploy: true
+    envVars:
+      - key: DATABASE_URL             # v3.7.0 RECOMMENDED: PostgreSQL from Neon / Supabase (keeps everything, drawings too)
+        sync: false
+      - key: CIVORA_OWNER             # site owner username
+        value: nishanth_s
+      - key: CIVORA_SECRET_KEY        # keeps everyone signed in across restarts
+        generateValue: true
+      - key: CIVORA_BACKUP_REPO       # e.g. Nishanth091123/civora-data (PRIVATE repo)
+        sync: false
+      - key: CIVORA_BACKUP_TOKEN      # fine-grained token: Contents read & write on that repo only
+        sync: false
+    # disk:
+    #   name: civora-data
+    #   mountPath: /app/data
+    #   sizeGB: 1

@@ -1,0 +1,65 @@
+{
+  "project": "Residential First Floor Plan - TEST ONLY",
+  "source_dimensions": {
+    "covered_slab_area_sqft": 1137.5,
+    "plinth_area_sqft": 1080,
+    "overall_width_ft": 35,
+    "overall_height_ft": 32.5,
+    "bedrooms": 3,
+    "toilets": 4,
+    "kitchens": 1,
+    "hall": 1,
+    "drawing_room": 1
+  },
+  "assumptions_not_on_drawing": {
+    "wall_height_ft": 10,
+    "external_wall_thickness_in": 9,
+    "internal_wall_thickness_in": 4.5,
+    "main_door_ft": [
+      3.5,
+      7
+    ],
+    "internal_door_ft": [
+      3,
+      7
+    ],
+    "toilet_door_ft": [
+      2.5,
+      7
+    ],
+    "window_ft": [
+      4,
+      4
+    ],
+    "ventilator_ft": [
+      2,
+      1.5
+    ],
+    "rcc_slab_thickness_mm": 125,
+    "concrete_grade": "M20 (test assumption; not structural design)",
+    "floor_tile_ft": [
+      2,
+      2
+    ],
+    "wall_tile_ft": [
+      1,
+      1
+    ],
+    "tile_wastage_pct": 5,
+    "kitchen_wall_tile_height_ft": 2,
+    "toilet_wall_tile_height_ft": 7,
+    "plaster_internal_mm": 12,
+    "plaster_external_mm": 15,
+    "wall_height_source": "assumed",
+    "slab_thickness_source": "assumed",
+    "door_window_count": "not verified",
+    "wall_length": "not extracted"
+  },
+  "rcc_test": {
+    "slab_area_m2": 105.677,
+    "slab_concrete_m3": 13.21,
+    "rmc_supply": "volume only, before waste, beams and openings",
+    "site_mix": "illustrative; requires mix design",
+    "bbs": "not computable without reinforcement schedule"
+  }
+}
